@@ -7,7 +7,9 @@
     "devStart": "nodemon --watch views -e js,html,json server.js",
     "test": "npm t",
     "requirements-check": "node checkNodeVersion.js",
-    "postinstall": "npm run requirements-check"
+    "postinstall": "npm run requirements-check",
+    "prepare": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -32,16 +34,18 @@
     "bcrypt": "^3.0.7",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "jsonwebtoken": "^8.5.1",
+    "jsonwebtoken": "^9.0.0",
     "nunjucks": "^3.2.0",
     "pg": "^7.18.0",
     "pg-hstore": "^2.3.3",
     "postgres-migrations": "^4.0.0",
     "semver": "^7.1.1",
     "sequelize": "^5.21.3",
-    "pac-resolver":"^4.2.0"
+    "pac-resolver": "^4.2.0",
+    "@snyk/protect": "latest"
   },
   "devDependencies": {
     "nodemon": "^2.0.2"
-  }
+  },
+  "snyk": true
 }
